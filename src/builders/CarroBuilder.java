@@ -26,7 +26,7 @@ public class CarroBuilder {
         this.cor=cor;
         return this;
     }
-    public CarroBuilder setPortas(int Portas){
+    public CarroBuilder setPortas(int portas){
         this.portas=portas;
         return this;
     }

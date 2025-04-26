@@ -1,7 +1,6 @@
-import java.util.Scanner;
-
 import builders.CarroBuilder;
 import entities.Carro;
+import java.util.Scanner;
 
 public class App {
 
@@ -19,6 +18,7 @@ public class App {
         System.out.println("---BEM--VINDO--AO--CRIADOR--DE--CARROS---");
 
         while (true) {
+            System.out.println("Escolha uma opção: ");
         
             System.out.println("1-Adicionar marca");
             System.out.println("2-Adicionar modelo");
@@ -33,45 +33,49 @@ public class App {
 
             switch (input) {
                 case 1:
-                    System.out.println("Digite a marca do seu carro:");
+                    System.out.println("Digite a marca: ");
                     marca = scan.next();
-                    continue;
+                    carrobuilder.setMarca(marca);
+                    break;
                 case 2:
-                    System.out.println("Digite o modelo do seu carro:");
+                    System.out.println("Digite o modelo: ");
                     modelo = scan.next();
-                    continue;
+                    carrobuilder.setModelo(modelo);
+                    break;
                 case 3:
-                    System.out.println("Digite o ano do seu carro:");
+                    System.out.println("Digite o ano: ");
                     ano = scan.nextInt();
-                    continue; // limpar buffer
-                    
+                    carrobuilder.setAno(ano);
+                    break;
                 case 4:
-                    System.out.println("Digite a cor do seu carro:");
+                    System.out.println("Digite a cor: ");
                     cor = scan.next();
-                    continue;
+                    carrobuilder.setCor(cor);
+                    break;
                 case 5:
-                    System.out.println("Digite a quantidade de portas do seu carro:");
+                    System.out.println("Digite a quantidade de portas: ");
                     portas = scan.nextInt();
-                    continue; // limpar buffer
-                    
+                    carrobuilder.setPortas(portas);
+                    break;
                 case 6:
-                    System.out.println("Digite a autonomia do seu carro (em km):");
+                    System.out.println("Digite a autonomia: ");
                     autonomia = scan.nextInt();
-                    continue; // limpar buffer
-            
+                    carrobuilder.setAutonomia(autonomia);
+                    break;
                 case 7:
-                    Carro carro = carrobuilder.setMarca(marca).setModelo(modelo).setAno(ano).setCor(cor).setPortas(portas).setAutonomia(autonomia).build();
-                    System.out.println("\n---SEU CARRO---");
+                    Carro carro = carrobuilder.build(); 
                     System.out.println(carro.toString());
+                    System.out.println("Pressione enter para continuar...");
                     scan.next();
-                    continue;
-                    
+                    break;
                 case 8:
-                    System.out.println("Saindo... Até logo!");
-                    return;
+                    System.exit(0);
+                    break;
                 default:
-                    System.out.println("Opção inválida. Tente novamente.");
+                    System.out.println("Opção inválida!");
+                    break;
             }
+
        
             
         }

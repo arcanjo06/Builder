@@ -1,18 +1,38 @@
-## Getting Started
+## Carro Builder
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+O CarroBuilder é um pequeno codigo que usei para treinar o padrão de projeto Builder.Com ele posso criar um carro com as caracteristicas que eu quiser de forma simplificada e dinamica.
 
-## Folder Structure
+## Como usar?
 
-The workspace contains two folders by default, where:
+1. Crie um objeto CarroBuilder usando o construtor CarroBuilder();
+2. Crie um Carro usando o metodo build();
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Exemplo:
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+```
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+CarroBuilder carrobuilder= new CarroBuilder();
 
-## Dependency Management
+Carro carro=carrobuilder.setMarca("Honda").setModelo("Civic").setAno(2021).setCor("Prata").setPortas(4).setAutonomia(20).build();
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+System.out.println(carro);
+
+```
+
+## Resultado:
+
+```
+AQUI ESTÁ SEU CARRO
+
+Marca = Honda
+Modelo = Civic
+Ano = 2021
+Cor = Prata
+Porta = 4   
+Autonomia = 20
+
+```
+
+## Melhorias
+
+Para melhorar a experiencia do usuario, adicionei um scanner que permite que o usuario interaja com o programa sem codificar nada.
